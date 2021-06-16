@@ -1,12 +1,12 @@
 body
 {
-  background-color: #343b48;
+  background-color: #333333;
 }
 
 #header
 {
   position: fixed;
-  background-color: #282e33;
+  background-color: #1e90ff;
   left: 0;
   right: 0;
   top: 0;
@@ -25,7 +25,7 @@ body
   color: #ffffff;
   padding-top: 2px;
   font-size: 32px;
-  font-family: Comfortaa;
+  font-family: Bahnschrift;
   font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ body
   padding: 0 16px;
   color: #ffffff;
   font-size: 24px;
-  font-family: Comfortaa;
+  font-family: Bahnschrift;
   font-weight: bold;
   outline: none;
   border: none;
@@ -55,4 +55,35 @@ body
 .user_tile:active
 {
   background-color: #0862bb;
+}
+
+#user_dropdown
+{
+  position: fixed;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  flex-direction: column;
+  right: 0;
+  top: 60px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.user_dropdown_item
+{
+  position: relative;
+  padding: 5px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.user_dropdown_item:hover
+{
+    background-color: #eeeeee;
+}
+
+.user_dropdown_item:active
+{
+  background-color: #dedede;
 }
