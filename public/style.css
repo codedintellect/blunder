@@ -1,12 +1,12 @@
 body
 {
-  background-color: #ffffff;
+  background-color: #343b48;
 }
 
 #header
 {
   position: fixed;
-  background-color: #1e90ff;
+  background-color: #282e33;
   left: 0;
   right: 0;
   top: 0;
@@ -25,7 +25,7 @@ body
   color: #ffffff;
   padding-top: 2px;
   font-size: 32px;
-  font-family: Bahnschrift;
+  font-family: Comfortaa;
   font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ body
   padding: 0 16px;
   color: #ffffff;
   font-size: 24px;
-  font-family: Bahnschrift;
+  font-family: Comfortaa;
   font-weight: bold;
   outline: none;
   border: none;
