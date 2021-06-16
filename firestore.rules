@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/games/documents {
+    match /sticks/completed/{gameId} {
+    	allow read;
+      allow write: if false;
+    }
+  }
+}
