@@ -1,0 +1,58 @@
+body
+{
+  background-color: #ffffff;
+}
+
+#header
+{
+  position: fixed;
+  background-color: #1e90ff;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+}
+
+.logo
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 100%;
+  padding: 0 16px;
+  color: #ffffff;
+  padding-top: 2px;
+  font-size: 32px;
+  font-family: Bahnschrift;
+  font-weight: bold;
+}
+
+.user_tile
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  height: 100%;
+  background-color: #0a7cec;
+  padding: 0 16px;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: Bahnschrift;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+
+.user_tile:hover
+{
+  background-color: #0b71d6;
+}
+
+.user_tile:active
+{
+  background-color: #0862bb;
+}
