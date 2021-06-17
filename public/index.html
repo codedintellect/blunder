@@ -5,6 +5,7 @@
     <title>blunder.tk</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script>
       var firebaseConfig = {
@@ -17,6 +18,7 @@
       };
       firebase.initializeApp(firebaseConfig);
     </script>
+    <script src="menu.js"></script>
   </head>
   <body>
     <div id="header">
@@ -24,10 +26,16 @@
       <button class="user_tile">Fronddi</button>
     </div>
     <div id="user_dropdown">
-      <a class="user_dropdown_item">Настройки</a>
+      <a class="user_dropdown_item" id="settings">Настройки</a>
       <a class="user_dropdown_item" style="color: #bbbbbb; pointer-events: none;">Помощь</a>
-      <a class="user_dropdown_item">Выход</a>
+      <a class="user_dropdown_item" id="logout">Выход</a>
     </div>
+
+    <div id="settings_window">
+      <div class="settings_window_header">Настройки</div>
+      <div class="settings_window_close"></div>
+    </div>
+          <div class="settings_window_bg"></div>
 
   </body>
 </html>

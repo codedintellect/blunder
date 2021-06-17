@@ -1,6 +1,7 @@
 body
 {
   background-color: #2f3542;
+  user-select: none;
 }
 
 #header
@@ -60,14 +61,16 @@ body
 #user_dropdown
 {
   position: fixed;
-  display: flex;
-  background-color: #ffffff;
+  display: none;
+  flex-direction: row;
+  background-color: #4a5469;
   border-radius: 8px;
   flex-direction: column;
   right: 0;
   top: 60px;
   overflow: hidden;
   text-align: center;
+  color: #ffffff;
 }
 
 .user_dropdown_item
@@ -80,10 +83,66 @@ body
 
 .user_dropdown_item:hover
 {
-    background-color: #eeeeee;
+    background-color: #3a4252;
 }
 
 .user_dropdown_item:active
 {
-  background-color: #dedede;
+  background-color: #313846;
+}
+
+
+/*  SETTINGS WINDOW  */
+
+#settings_window
+{
+  position: fixed;
+  display: none;
+  background-color: #4a5469;
+  height: 600px;
+  width: 500px;
+  left: calc(50% - 250px);
+  top: calc(50% - 300px);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.settings_window_header
+{
+  position: relative;
+  background-color: #404858;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: Comfortaa;
+  font-weight: bold;
+  padding: 16px 0 12px 16px;
+}
+
+.settings_window_close
+{
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: #f76161;
+  cursor: pointer;
+}
+
+.settings_window_close:hover
+{
+  background-color: #d44545;
+}
+
+.settings_window_bg
+{
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(3px);
 }
