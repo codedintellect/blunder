@@ -59,3 +59,18 @@ body
   padding: 6px;
   left: calc(50% - 32px);
 }
+
+#message
+{
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
+  height: auto;
+  background-color: #4b62af;
+  border-radius: 8px;
+  padding: 24px;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: Comfortaa;
+}
