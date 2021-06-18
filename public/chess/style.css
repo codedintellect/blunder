@@ -1,0 +1,28 @@
+body
+{
+  background-color: #70a1ff;
+  user-select: none;
+}
+
+#board
+{
+  position: absolute;
+  left: calc(50% - 400px);
+  top: calc(50% - 400px);
+  border-radius: 24px;
+}
+
+.gsua
+{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #ffffff;
+  font-family: Comfortaa;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: inherit;
+  padding: 6px;
+  z-index: 1;
+}
