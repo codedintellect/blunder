@@ -1,6 +1,7 @@
 body
 {
   background-color: #70a1ff;
+  user-select: none;
 }
 
 #form
@@ -67,10 +68,12 @@ body
   left: 10%;
   right: 10%;
   height: auto;
-  background-color: #4b62af;
+  background-color: #587ae8;
   border-radius: 8px;
   padding: 24px;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 18px;
+  text-align: justify;
   font-family: Comfortaa;
+  box-shadow: 1px 1px 1px 1px aliceblue;
 }
