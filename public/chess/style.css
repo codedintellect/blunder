@@ -12,17 +12,23 @@ body
   border-radius: 24px;
 }
 
-.gsua
+#pieces
 {
   position: absolute;
-  top: 0;
-  width: 100%;
-  color: #ffffff;
-  font-family: Comfortaa;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  background-color: inherit;
-  padding: 6px;
-  z-index: 1;
+  left: calc(50% - 400px);
+  top: calc(50% - 400px);
+  width: 800px;
+  height: 800px;
+}
+
+.piece
+{
+  position: absolute;
+  display: flex;
+  width: 12.5%;
+  height: 12.5%;
+  color: red;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
 }
