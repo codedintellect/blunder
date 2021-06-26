@@ -34,31 +34,3 @@ body
   align-items: center;
   justify-content: center;
 }
-
-.tilesBagArrow
-{
-  position: absolute;
-  top: calc(50% - 150px);
-  right: 0;
-  height: 300px;
-  border: none;
-  border-radius: 12px 0 0 12px;
-  width: 40px;
-  background-color: #33333399;
-}
-
-.tilesBagArrow:active
-{
-  background-color: #25252599;
-}
-
-#tilesBag
-{
-  position: absolute;
-  top: calc(50% - 150px);
-  right: -300px;
-  background-color: #333333;
-  border-radius: 8px;
-  height: 300px;
-  width: 300px;
-}

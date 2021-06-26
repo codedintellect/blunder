@@ -1,0 +1,70 @@
+body
+{
+  background-color: #2f3542;
+  user-select: none;
+  overflow: hidden;
+  font-family: Comfortaa;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+#blogBlock
+{
+  position: absolute;
+  overflow: auto;
+  height: 600px;
+  width: 700px;
+  top: calc(50% - 300px);
+  left: calc(50% - 350px);
+  border-radius: 12px;
+  background-color: #4a5469;
+  padding: 0 14px 10px 14px;
+  color: #ffffff;
+}
+
+a
+{
+  text-decoration: none;
+  color: #eccc68;
+  font-style: italic;
+}
+
+a:visited
+{
+  text-decoration: none;
+  color: #888888;
+  font-style: italic;
+}
+
+.progress
+{
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 350px);
+  border-radius: 12px 12px 0 0;
+  height: 16px;
+  background-color: #ff6b81;
+  z-index: 1;
+}
+
+.content
+{
+  position: absolute;
+  overflow: auto;
+  padding: 0 14px 0 14px;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 17px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #404858;
+  border-radius: 12px;
+}

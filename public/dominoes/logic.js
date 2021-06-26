@@ -1,53 +1,32 @@
-var ctx;
-var canvas;
+var b = $("#board");
+var ctx = b[0].getContext("2d")
 
-let objects = [
-  {"name":"Bone", "draw":()=>{
-    ctx.beginPath();
-    ctx.rect(600, 0, 650, 100);
-    ctx.fill();
-    ctx.closePath();
-  }},
-];
+var mouseX, mouseY, lastX, lastY;
 
-let mouseX, mouseY;
-
-$(document).ready(function() {
-  $(".tilesBagArrow").click(function clicked() {
-    $("#tilesBag").css("right", "0px");
-  })})
-
-function draw() {
-    canvas = document.getElementById("board");
-    ctx = canvas.getContext("2d");
-    var x, y;
-}
-
-document.body.addEventListener("mousemove", (event)=>{
-  mouseX = event.clientX;
-  mouseY = event.clientY;
-  drawer();
+b.mousemove(function(event) {
+  lastX = mouseX;
+  lastY = mouseY;
+  mouseX = event.offsetX * b.attr("width") / b.width();
+  mouseY = event.offsetY * b.attr("height") / b.height();
+  drawer(event.buttons == 1);
 });
 
-
-  function drawer() {
+function drawer(drag) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let noObjectFound = true;
+  var p = new Path2D("M0 0 h 100 v 100 h -100 z");
+  ctx.fillStyle = "#000000";
+  ctx.fill(p);
+  if (ctx.isPointInPath(p, lastX, lastY) && drag) {
 
-  var mouseXFixed, mouseYFixed;
-  mouseXFixed = mouseX - parseInt($("#board").css("left").substring(0, $("#board").css("left").length - 2));
-  //alert(mouseXFixed);
-
-  for (let object of objects) {
-
-    object.draw();
-
-    if (noObjectFound && ctx.isPointInPath(mouseX, mouseY)) {
-      alert(object.name);
-      noObjectFound = false;
-    }
   }
 }
-document.addEventListener("DOMContentLoaded", draw);
-document.addEventListener("DOMContentLoaded", drawer);
+drawer(false);
+
+document.getElementById('clickme').onclick = function clickEvent(e) {
+      // e = Mouse click event.
+      var rect = e.target.getBoundingClientRect();
+      var x = e.clientX - rect.left; //x position within the element.
+      var y = e.clientY - rect.top;  //y position within the element.
+      console.log("Left? : " + x + " ; Top? : " + y + ".");
+    }

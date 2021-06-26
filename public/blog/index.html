@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!--link rel="stylesheet" href="style.css"-->
+    <title>blunder.tk - Blog</title>
     <link rel="stylesheet" href="style.css">
-    <title>blunder.tk - Домино</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script>
@@ -19,13 +21,15 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
-
   </head>
   <body>
 
+    <div id="result"></div>
+    <div class="progress"></div>
+    <div id="blogBlock">
 
-    <div id="board" width="800" height="800"></div>
-    <script src="logic.js"></script>
+      <div class="content"></div>
+    </div>
+    <script src="script.js"></script>
   </body>
-
 </html>
