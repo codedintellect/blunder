@@ -1,48 +1,19 @@
-UPDATE #1
+ОБНОВЛЕНИЕ #0 (0_0)
 =
 
-[NOTHING INTERESTING](https://wutdafuk.com/)
+[НИЧЕГО ИНТЕРЕСНОГО](https://wutdafuk.com/)
+
+*По сути, прогресс ~есть~, прорвемся! Скоро здесь появится список **нормальных** обновлений.*
+
+<div> </div>
+<div> </div>
+<i>Мы обязаны сделать это тяжелое дело… Вернее, легкое дело. Вернее, среднее, вернее, средне тяжелое с примесью трудных моментов легкого дела…    <code>(Губка Боб Квадратные Штаны (SpongeBob SquarePants))<code></i>
 
 
->quotes
->quotes
+<div> </div>
+<div> </div>
 
-**bold**
+- Известна ещё одна легенда: если текст зайдёт за пределы высоты этого окна, то появится полоса прокрутки, а вместе с ней и полоса прогресса этой прокрутки.
+<div> </div>
 
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots
-- dots- dots
-
-- dots
-- dots
-
-
-*italic*
-
-~crossed out~
-
-`codedintellect`
+Здесь был `DmitrievPlays`
