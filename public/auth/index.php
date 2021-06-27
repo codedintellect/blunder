@@ -1,12 +1,9 @@
 <!DOCTYPE html>
+<?php include "../header.php"; ?>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
     <title>blunder.tk - Sign Up</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyDQvbznQa-Yb1tUcZpByS8Hsy2EGZfqZMg",

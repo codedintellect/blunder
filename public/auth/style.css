@@ -1,13 +1,13 @@
 body
 {
-  background-color: #70a1ff;
+  background-color: #2f3542;
   user-select: none;
 }
 
 #form
 {
   position: absolute;
-  background-color: #5f81f1;
+  background-color: #262a33;
   left: calc(50% - 200px);
   top: calc(50% - 130px);
   width: 400px;
@@ -68,7 +68,7 @@ body
   left: 10%;
   right: 10%;
   height: auto;
-  background-color: #587ae8;
+  background-color: #262a33;
   border-radius: 8px;
   padding: 24px;
   color: #ffffff;

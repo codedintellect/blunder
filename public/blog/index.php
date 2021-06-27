@@ -1,12 +1,10 @@
 <!DOCTYPE html>
+<?php include "../header.php"; ?>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>blunder.tk - Домино</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <title>blunder.tk - Блог</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyDQvbznQa-Yb1tUcZpByS8Hsy2EGZfqZMg",
@@ -19,13 +17,15 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
-
   </head>
   <body>
 
+    <div id="result"></div>
+    <div class="progress"></div>
+    <div id="blogBlock">
 
-    <canvas id="board" width="800" height="800"></canvas>
-    <script src="logic.js"></script>
+      <div class="content"></div>
+    </div>
+    <script src="script.js"></script>
   </body>
-
 </html>
