@@ -10,12 +10,12 @@
   </head>
   <body>
     <div id="header">
-      <div class="logo">blunder.tk</div>
+      <div class="logo" title="Какие же мучения...">blunder.tk</div>
       <button class="user_tile">Fronddi</button>
     </div>
 
     <div id="gameChoose">
-      <button class="gameCard" style="margin-left: 0"></button>
+      <button class="gameCard" style="margin-left: 0"><img src="sticks.png" style="width: 300px; height: 400px; background: #4a5469"></img></button>
       <button class="gameCard"></button>
       <button class="gameCard"></button>
       <button class="gameCard"></button>
