@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "borrowed.php" ?>
+<?php include "../borrowed.php" ?>
 <html>
   <head>
     <meta charset="utf-8">

@@ -14,6 +14,25 @@
       <button class="user_tile">Fronddi</button>
     </div>
 
+    <div id="gameChoose">
+      <button class="gameCard" style="margin-left: 0"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard"></button>
+      <button class="gameCard" style="margin-right: 0"></button>
+    </div>
+    <div class="gameChooseShadow"></div>
+
     <div id="profile">
       <div class="profile_header">Профиль
         <div class="profile_close"></div>

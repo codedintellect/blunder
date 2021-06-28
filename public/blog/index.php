@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "borrowed.php" ?>
+<?php include "../borrowed.php" ?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
-
     <div id="result"></div>
     <div class="progress"></div>
     <div id="blogBlock">
