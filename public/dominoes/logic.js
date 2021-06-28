@@ -2,6 +2,7 @@ var b = $("#board");
 var ctx = b[0].getContext("2d");
 var p;
 
+
 var mouseX, mouseY, lastX, lastY;
 
 b.mousemove(function(event) {
@@ -10,23 +11,23 @@ b.mousemove(function(event) {
   mouseX = event.offsetX * b.attr("width") / b.width();
   mouseY = event.offsetY * b.attr("height") / b.height();
   drawer(event.buttons == 1);
+  a[0] = mouseX; a[1] = mouseY;
 });
 
+var a = [30, 10];
 
 function setup() {
-  //p = new Path2D("M0 0 h 60 v 120 h -60 z");
   ctx.fillStyle = "#ffffff";
-  //ctx.fill(p);
   p = new Path2D;
   p.beginPath
-  p.lineTo(50, 0);
-  p.bezierCurveTo(50, 0, 60, 0, 60, 10);
-  p.lineTo(60, 110);
-  p.bezierCurveTo(60, 110, 60, 120, 50, 120);
-  p.lineTo(10, 120);
-  p.bezierCurveTo(10, 120, 0, 120, 0, 110);
-  p.lineTo(0, 10);
-  p.bezierCurveTo(0, 10, 0, 0, 10, 0);
+  p.lineTo(a[0] + 50, a[1] + 0);
+  p.bezierCurveTo(a[0] + 50, a[1] + 0, a[0] + 60, a[1] + 0, a[0] + 60, a[1] + 10);
+  p.lineTo(a[0] + 60, a[1] + 110);
+  p.bezierCurveTo(a[0] + 60, a[1] + 110, a[0] + 60, a[1] + 120, a[0] + 50, a[1] + 120);
+  p.lineTo(a[0] + 10, a[1] + 120);
+  p.bezierCurveTo(a[0] + 10, a[1] + 120, a[0] + 0, a[1] + 120, a[0] + 0, a[1] + 110);
+  p.lineTo(a[0] + 0, a[1] + 10);
+  p.bezierCurveTo(a[0] + 0, a[1] + 10, a[0] + 0, a[1] + 0, a[0] + 10, a[1] + 0);
   p.closePath;
 
   ctx.fill(p);
