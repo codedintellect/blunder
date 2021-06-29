@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css"/>
     <script src="menu.js"></script>
     <script src="account.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
   </head>
   <body>
     <div id="header">
@@ -46,4 +47,5 @@
 
     <div class="profile_bg"></div>
   </body>
+  <script src="create.js"></script>
 </html>

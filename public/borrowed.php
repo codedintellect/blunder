@@ -7,6 +7,7 @@
     apiKey: "AIzaSyDQvbznQa-Yb1tUcZpByS8Hsy2EGZfqZMg",
     authDomain: "gamez-70be1.firebaseapp.com",
     projectId: "gamez-70be1",
+    databaseURL: "https://gamez-70be1-default-rtdb.europe-west1.firebasedatabase.app/",
     storageBucket: "gamez-70be1.appspot.com",
     messagingSenderId: "60984158547",
     appId: "1:60984158547:web:68a414a679bfde3b0799a6"
