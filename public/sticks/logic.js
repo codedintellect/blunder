@@ -44,7 +44,7 @@ function checkClick(clk) {
       var shape = new Path2D(`M${startX} ${startY + g/2} ` + vp);
       if (ctx.isPointInPath(shape, clk[0], clk[1])) {
         if (ph[x*h+y] == false) {
-          firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').add({turn:x*h+y});
+          firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').push(x*h+y);
         }
         ph[x*h+y] = true;
       }
@@ -57,7 +57,7 @@ function checkClick(clk) {
       var shape = new Path2D(`M${startX + g/2} ${startY} ` + hp)
       if (ctx.isPointInPath(shape, clk[0], clk[1])) {
         if (ph[x*(h+1)+y] == false) {
-          firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').add({turn:h*(w+1)+x*(h+1)+y});
+          firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').push(h*(w+1)+x*(h+1)+y);
         }
         pw[x*(h+1)+y] = true;
       }
