@@ -1,9 +1,8 @@
-var w = 0, h = 0, zoom = 0.9, lastX, lastY, posX, posY, clickTime, stX, stY;
+var w, h, zoom = 0.9, lastX, lastY, posX, posY, clickTime, stX, stY, count = 0;
 var c = document.getElementById('game');
 var ctx = c.getContext('2d');
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-var ph, pw, white, black;
-var turn = 0;
+var ph, pw, white, black, plr, t = 0;
 var game = firebase.database().ref('sticks/nbvT2Rh3KGdqw86x');
 game.child('h').get().then((snapshot) => {
   if (snapshot.exists()) {
@@ -27,8 +26,10 @@ game.child('w').get().then((snapshot) => {
 });
 game.child('p').get().then((snapshot) => {
   if (snapshot.exists()) {
-    load()
-    console.log(snapshot.val());
+    plr = parseInt(
+      Object.keys(snapshot.val()).find(key => snapshot.val()[key] === usr.uid)
+    );
+    load();
   } else {
     console.log("No data available");
   }
@@ -53,29 +54,44 @@ function load() {
   }
 
   game.child('m').on('child_added', (data) => {
-    turn = parseInt(data.key) + 1;
+    count = parseInt(data.key) + 1;
+    var filledSquare = false;
     if (data.val() < h*(w+1)) {
       var x = Math.floor(data.val() / w);
       var y = data.val() % h;
       ph[x][y] = true;
       if (x < w)
-        if (ph[x+1][y]&&pw[x][y]&&pw[x][y+1])
-          white[x][y] = true;
+        if (ph[x+1][y]&&pw[x][y]&&pw[x][y+1]) {
+          filledSquare = true;
+          if (t % 2 == 0) white[x][y] = true;
+          else if (t % 2 == 1) black[x][y] = true;
+        }
       if (x > 0)
-        if (ph[x-1][y]&&pw[x-1][y]&&pw[x-1][y+1])
-          white[x-1][y] = true;
+        if (ph[x-1][y]&&pw[x-1][y]&&pw[x-1][y+1]) {
+          filledSquare = true;
+          if (t % 2 == 0) white[x-1][y] = true;
+          else if (t % 2 == 1) black[x-1][y] = true;
+        }
     }
     else {
       var x = Math.floor((data.val()-h*(w+1)) / (w+1));
       var y = (data.val()-h*(w+1)) % (h+1);
       pw[x][y] = true;
-      if (y != h+1)
-        if (pw[x][y+1]&&ph[x][y]&&ph[x+1][y])
-          white[x][y] = true;
+      if (y < h+1)
+        if (pw[x][y+1]&&ph[x][y]&&ph[x+1][y]) {
+          filledSquare = true;
+          if (t % 2 == 0) white[x][y] = true;
+          else if (t % 2 == 1) black[x][y] = true;
+        }
       if (y > 0)
-        if (pw[x][y-1]&&ph[x][y-1]&&ph[x+1][y-1])
-          white[x][y-1] = true;
+        if (pw[x][y-1]&&ph[x][y-1]&&ph[x+1][y-1]) {
+          filledSquare = true;
+          if (t % 2 == 0) white[x][y-1] = true;
+          else if (t % 2 == 1) black[x][y-1] = true;
+        }
     }
+
+    if (!filledSquare) t += 1;
 
     draw();
   });
@@ -94,7 +110,7 @@ function checkClick(clk) {
       var startY = posY + 4*g*(2*y - h);
       var shape = new Path2D(`M${startX} ${startY + g/2} ` + vp);
       if (ctx.isPointInPath(shape, clk[0], clk[1])) {
-        if (!ph[x][y]) game.child('m').child(turn).set(x*h+y);
+        if (!ph[x][y] && t % 2 == plr) game.child('m').child(count).set(x*h+y);
       }
     }
   }
@@ -104,7 +120,7 @@ function checkClick(clk) {
       var startY = posY + 4*g*(2*y - h);
       var shape = new Path2D(`M${startX + g/2} ${startY} ` + hp)
       if (ctx.isPointInPath(shape, clk[0], clk[1])) {
-        if (!pw[x][y]) game.child('m').child(turn).set(h*(w+1)+x*(h+1)+y);
+        if (!pw[x][y] && t % 2 == plr) game.child('m').child(count).set(h*w+h+x*h+x+y);
       }
     }
   }

@@ -6,6 +6,14 @@
     <title>blunder.tk | Sticks</title>
     <link rel="stylesheet" href="style.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script type="text/javascript">
+    var usr;
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        usr = user;
+      }
+    });
+    </script>
   </head>
   <body style="background-color: #2f3542; margin: 0; height: 100vh;">
     <canvas id="game" width="0" height="0" class="frame"></canvas>
