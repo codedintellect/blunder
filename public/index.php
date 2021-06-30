@@ -46,6 +46,11 @@
     </div>
 
     <div class="profile_bg"></div>
+
+    <div id="advert">
+      <div class="ad"></div>
+      <div class="ad"></div>
+    </div>
   </body>
   <script src="create.js"></script>
 </html>
