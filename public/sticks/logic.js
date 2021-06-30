@@ -1,35 +1,86 @@
-var w = 20, h = 20, zoom = 0.9, lastX, lastY, posX, posY, clickTime, stX, stY;
+var w = 0, h = 0, zoom = 0.9, lastX, lastY, posX, posY, clickTime, stX, stY;
 var c = document.getElementById('game');
 var ctx = c.getContext('2d');
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-var ph, pw, red, blue;
+var ph, pw, white, black;
 var turn = 0;
+var game = firebase.database().ref('sticks/nbvT2Rh3KGdqw86x');
+game.child('h').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+    h = snapshot.val();
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+game.child('w').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+    w = snapshot.val();
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+game.child('p').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    load()
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
 function load() {
-  firebase.database().ref('sticks/nbvT2Rh3KGdqw86x').get().then((snapshot) => {
-    if (snapshot.exists()) {
-      console.log(snapshot.val());
-      h = snapshot.val().h;
-      w = snapshot.val().w;
-      ph = new Array(h*(w+1)).fill(false);
-      pw = new Array(w*(h+1)).fill(false);
-      red = new Array(w*h).fill(false);
-      blu = new Array(w*h).fill(false);
-      firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').on('value', (snapshot) => {
-        turn += 1;
-        var data = snapshot.val();
-        console.log(data);
-        if (data < h*(w+1)) ph[data] = true;
-        else pw[data-h*(w+1)] = true;
-        draw();
-      });
-    } else {
-      console.log("No data available");
+  ph = new Array(w+1);
+  for (var i = 0; i < w+1; i++) {
+    ph[i] = new Array(h).fill(false);
+  }
+  pw = new Array(w);
+  for (var i = 0; i < w; i++) {
+    pw[i] = new Array(h+1).fill(false);
+  }
+  white = new Array(w);
+  black = new Array(w);
+  for (var i = 0; i < w; i++) {
+    white[i] = new Array(h).fill(false);
+    black[i] = new Array(h).fill(false);
+  }
+
+  game.child('m').on('child_added', (data) => {
+    turn = parseInt(data.key) + 1;
+    if (data.val() < h*(w+1)) {
+      var x = Math.floor(data.val() / w);
+      var y = data.val() % h;
+      ph[x][y] = true;
+      if (x < w)
+        if (ph[x+1][y]&&pw[x][y]&&pw[x][y+1])
+          white[x][y] = true;
+      if (x > 0)
+        if (ph[x-1][y]&&pw[x-1][y]&&pw[x-1][y+1])
+          white[x-1][y] = true;
     }
-  }).catch((error) => {
-    console.error(error);
+    else {
+      var x = Math.floor((data.val()-h*(w+1)) / (w+1));
+      var y = (data.val()-h*(w+1)) % (h+1);
+      pw[x][y] = true;
+      if (y != h+1)
+        if (pw[x][y+1]&&ph[x][y]&&ph[x+1][y])
+          white[x][y] = true;
+      if (y > 0)
+        if (pw[x][y-1]&&ph[x][y-1]&&ph[x+1][y-1])
+          white[x][y-1] = true;
+    }
+
+    draw();
   });
+  draw();
 }
-load();
 
 function checkClick(clk) {
   var a = Math.ceil(c.clientWidth / (8*w));
@@ -43,10 +94,7 @@ function checkClick(clk) {
       var startY = posY + 4*g*(2*y - h);
       var shape = new Path2D(`M${startX} ${startY + g/2} ` + vp);
       if (ctx.isPointInPath(shape, clk[0], clk[1])) {
-        if (ph[x*h+y] == false) {
-          firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').push(x*h+y);
-        }
-        ph[x*h+y] = true;
+        if (!ph[x][y]) game.child('m').child(turn).set(x*h+y);
       }
     }
   }
@@ -56,10 +104,7 @@ function checkClick(clk) {
       var startY = posY + 4*g*(2*y - h);
       var shape = new Path2D(`M${startX + g/2} ${startY} ` + hp)
       if (ctx.isPointInPath(shape, clk[0], clk[1])) {
-        if (ph[x*(h+1)+y] == false) {
-          firebase.database().ref('sticks/nbvT2Rh3KGdqw86x/m').push(h*(w+1)+x*(h+1)+y);
-        }
-        pw[x*(h+1)+y] = true;
+        if (!pw[x][y]) game.child('m').child(turn).set(h*(w+1)+x*(h+1)+y);
       }
     }
   }
@@ -90,14 +135,14 @@ function draw() {
       if (startX <= c.width + g && startX >= -8*g) {
         if (startY <= c.height && startY >= -8*g) {
           if (x < w) {
-            if (red[x*h+y]) {
+            if (white[x][y]) {
               ctx.beginPath();
               ctx.rect(startX + g/2, startY + g/2,7*g, 7*g);
               ctx.fillStyle = "#a4b0be";
               ctx.fill();
             }
           }
-          ctx.fillStyle = ph[x*h+y] ? '#a4b0be' : '#747d8c';
+          ctx.fillStyle = ph[x][y] ? '#a4b0be' : '#747d8c';
           ctx.fill(new Path2D(`M${startX} ${startY + g/2} ` + vp));
         }
       }
@@ -110,37 +155,33 @@ function draw() {
       if (startX <= c.width && startX >= -8*g) {
         if (startY <= c.height + g && startY >= -g) {
           ctx.beginPath();
-          if (x != 0 && pw[x*(h+1)+y] && pw[x*(h+1)+y-h-1] && ph[x*h+y] && ph[x*h+y-1]) {
+          if (x > 0 && y > 0 && y < h && pw[x][y] && pw[x-1][y] && ph[x][y] && ph[x][y-1])
             ctx.moveTo(startX, startY);
-          } else {
-            ctx.moveTo(startX + g/2, startY);
-          }
-          if (ph[x*h+y] && y != h && pw[x*(h+1)+y]) {
+          else ctx.moveTo(startX + g/2, startY);
+          if (ph[x][y] && y < h && pw[x][y]) {
             ctx.lineTo(startX -1, startY + g/2 +1);
             ctx.lineTo(startX + g -1, startY + 1.5*g +1);
           }
           ctx.lineTo(startX + 1.5*g, startY + g);
           ctx.lineTo(startX + 6.5*g, startY + g);
-          if (ph[x*h+y+h] && y != h && pw[x*(h+1)+y]) {
+          if (ph[x+1][y] && y < h && pw[x][y]) {
             ctx.lineTo(startX + 7*g +1, startY + 1.5*g +1);
             ctx.lineTo(startX + 8*g +1, startY + g/2 +1);
           }
-          if (x != w-1 && pw[x*(h+1)+y] && pw[x*(h+1)+y+h+1] && ph[x*h+y+h] && ph[x*h+y+h-1]) {
+          if (x < w-1 && pw[x][y] && pw[x+1][y] && ph[x+1][y] && ph[x+1][y-1])
             ctx.lineTo(startX + 8*g, startY);
-          } else {
-            ctx.lineTo(startX + 7.5*g, startY);
-          }
-          if (ph[x*h+y+h-1] && y != 0 && pw[x*(h+1)+y]) {
+          else ctx.lineTo(startX + 7.5*g, startY);
+          if (y > 0 && ph[x+1][y-1] && pw[x][y]) {
             ctx.lineTo(startX + 8*g +1, startY - g/2 -1);
             ctx.lineTo(startX + 7*g +1, startY - 1.5*g -1);
           }
           ctx.lineTo(startX + 6.5*g, startY - g);
           ctx.lineTo(startX + 1.5*g, startY - g);
-          if (ph[x*h+y-1] && y != 0 && pw[x*(h+1)+y]) {
+          if (y > 0 && ph[x][y-1] && pw[x][y]) {
             ctx.lineTo(startX + g -1, startY - 1.5*g -1);
             ctx.lineTo(startX -1, startY - g/2 -1);
           }
-          ctx.fillStyle = pw[x*(h+1)+y] ? '#a4b0be' : '#747d8c';
+          ctx.fillStyle = pw[x][y] ? '#a4b0be' : '#747d8c';
           ctx.fill();
         }
       }
