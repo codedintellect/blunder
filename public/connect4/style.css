@@ -1,0 +1,36 @@
+body
+{
+  background-color: #2f3542;
+  user-select: none;
+  overflow: hidden;
+}
+
+#board
+{
+  position: absolute;
+  left: calc(50% - 400px);
+  top: calc(50% - 400px);
+  border-radius: 24px;
+  background-color: #59647b;
+}
+
+#tiles
+{
+  position: absolute;
+  left: calc(50% - 400px);
+  top: calc(50% - 400px);
+  width: 800px;
+  height: 800px;
+}
+
+.tile
+{
+  position: absolute;
+  display: flex;
+  width: 12.5%;
+  height: 12.5%;
+  color: red;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
+}

@@ -47,10 +47,10 @@
 
     <div class="profile_bg"></div>
 
-    <div id="advert">
+    <aside id="advert">
       <div class="ad"></div>
       <div class="ad"></div>
-    </div>
+    </aside>
   </body>
   <script src="create.js"></script>
 </html>
