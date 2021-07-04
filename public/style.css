@@ -1,14 +1,12 @@
 body
 {
-  background-color: #2f3542;
+  background-color: var(--темный);
   user-select: none;
-
 }
 
 #header
 {
   position: fixed;
-  background-color: #2f3542;
   left: 0;
   right: 0;
   top: 0;
@@ -24,14 +22,14 @@ body
   float: left;
   height: 100%;
   padding: 0 16px;
-  color: #ffffff;
+  color: var(--белый);
   padding-top: 2px;
   font-size: 32px;
   font-family: Comfortaa;
   font-weight: bold;
 }
 
-.user_tile
+.topbar_btn
 {
   position: relative;
   display: flex;
@@ -39,27 +37,37 @@ body
   align-items: center;
   float: right;
   height: 100%;
-  background-color: #0a7cec;
+  background-color: var(--синий);
   padding: 16px 16px 16px 20px;
-  border-radius: 0 0 0 30px;
-  color: #ffffff;
+  border-radius: 0 0 0 16px;
+  border: 2px var(--васильковый) solid;
+  color: var(--белый);
   font-size: 24px;
   font-family: Comfortaa;
   font-weight: bold;
   outline: none;
-  border: none;
   cursor: pointer;
+  transition: .2s;
 }
 
-.user_tile:hover
+.topbar_btn:hover { background-color: #0d5aa7; }
+
+.topbar_btn:active { background-color: #0c4d8e; }
+
+#leaderboard_popup
 {
-  background-color: #0b71d6;
+  position: absolute;
+  background-color: #384254;
+  top: 70px;
+  bottom: 10px;
+  right: 10px;
+  border: 3px #222222 solid;
+  width: 300px;
+  border-radius: 12px;
+  display: none;
+  box-shadow: 0 0 10px 10px #2f3542;
 }
 
-.user_tile:active
-{
-  background-color: #0862bb;
-}
 
 /*  PROFILE WINDOW  */
 #profile
@@ -129,7 +137,7 @@ body
   font-weight: lighter;
   font-family: Comfortaa;
   text-align: right;
-  color: #bbb;
+  color: var(--светло-серый);
 }
 
 .profile_level_bar
@@ -151,14 +159,11 @@ body
   height: 21px;
   width: 21px;
   border-radius: 11px;
-  background-color: #f76161;
+  background-color: var(--арбузный);
   cursor: pointer;
 }
 
-.profile_close:hover
-{
-  background-color: #d44545;
-}
+.profile_close:hover { background-color: var(--алый); }
 
 .profile_logout
 {
@@ -166,12 +171,14 @@ body
   width: 100%;
   bottom: 20px;
   text-align: center;
-  color: #f76161;
+  color: var(--арбузный);
   font-family: Comfortaa;
   font-weight: 900;
   font-size: 24px;
   text-decoration: none;
 }
+
+.profile_logout:hover { color: var(--алый); }
 
 .profile_bg
 {
@@ -219,9 +226,9 @@ body
   width: 316px;
   border-radius: 12px;
   border-style: solid;
-  border-color: #434a5a;
+  border-color: var(--асфальт);
   border-width: 8px;
-  background-color: #363d4c;
+  background-color: var(--темно-серый);
   scroll-snap-align: start;
   transition: .2s;
   cursor: pointer;
@@ -247,16 +254,16 @@ body
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #404858;
+  background-color: var(--темно-серый);
   border-radius: 12px;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #363d4c;
+  background-color: var(--асфальт);
   border-style: solid;
   border-width: 5px;
-  border-color: #404858;
+  border-color: var(--темно-серый);
 }
 
 #advert
