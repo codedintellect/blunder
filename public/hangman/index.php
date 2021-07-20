@@ -8,12 +8,9 @@
   </head>
   <body>
     <div id="board">
-      <canvas class="state" width="1280px" height="720px"></canvas>
+      <canvas class="state" width="720px" height="720px"></canvas>
       <input class="wordInput" type="text" maxlength="1"></input>
-      <div class="result">
-
-
-      </div>
+      <div class="result"></div>
     </div>
     <script src="logic.js"></script>
   </body>
