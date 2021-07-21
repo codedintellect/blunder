@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <?php include "../borrowed.php" ?>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>blunder.tk - Рисовальный поединок</title>
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <canvas id="board" width="800" height="800"></canvas>
     <div class="palette">
-      <input type="color" class="pallete_color" name="body"></input>
+      <input type="color" class="pallete_color" aria-label="Select color" name="body"></input>
       <div class="pallete_color_label">#000000</div>
       <div style="display: grid; grid-template-columns: repeat(2, 100px);">
         <button id="tool" onclick="gco = 'source-over'" style="margin-top: 20px;">PAINT</button>
@@ -17,7 +18,7 @@
         <button id="tool" class="clear" style="margin-top: 20px;">CLEAR</button>
         <button id="tool" class="save" style="margin-top: 20px;">SAVE</button>
       </div>
-      <input type="range" class="brush_width" value="10" step="5" min="5" max="150">
+      <input type="range" class="brush_width" aria-label="Change brush width" value="10" step="5" min="5" max="150">
     </div>
   </body>
   <script src="logic.js"></script>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php include "../borrowed.php"; ?>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>blunder.tk | Sticks</title>
     <link rel="stylesheet" href="style.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
