@@ -12,17 +12,43 @@
     <script src="authHandler.js"></script>
   </head>
   <body>
-    <?php // TODO: FIX ALL POSITIONS AND SIZES ?>
     <header id="header">
       <div class="logo" title="Какие же мучения...">blunder.tk</div>
       <button class="topbar_btn" id="user" onclick='$("#profile").show();$(".wbg").show()'>Fronddi</button>
     </header>
 
+    <div id="content">
+      <div class="games">
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+        <button class="game"></button>
+      </div>
+    </div>
+
     <div class="wbg"></div>
 
-    <div class="window" id="profile" style="display: none;">
+    <div class="window" id="profile">
       <div class="window_header">Профиль
         <div class="window_close" onclick='$("#profile").hide();$(".wbg").hide()'></div>
+      </div>
+      <div style="display: flex; flex-direction: row;">
+        <div class="profile_pic"></div>
+        <div style="display: flex; flex-direction: column; padding: 16px;">
+          <div style="position: relative; width: 100%; display: flex;">
+            <div class="profile_name">Fronddi</div>
+            <div class="profile_level">1</div>
+          </div>
+          <div class="profile_level_bar"></div>
+        </div>
       </div>
       <div class="profile_friends">
         <div class="profile_friends_topbar">ДРУЗЬЯ</div>
@@ -39,10 +65,7 @@
             </div>
           </div>
       </div>
-      <div class="profile_pic"></div>
-      <div class="profile_name"></div>
-      <div class="profile_level"></div>
-      <div class="profile_level_bar"></div>
+
       <a class="profile_logout" onclick="">ВЫЙТИ</a>
     </div>
 

@@ -1,3 +1,4 @@
+<meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <link rel="icon" href="logo.svg" sizes="any" type="image/svg+xml">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

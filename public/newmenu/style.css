@@ -45,6 +45,51 @@ body {
 
 .topbar_btn:active { background-color: #0c4d8e; }
 
+#content
+{
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.games
+{
+  position: absolute;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  bottom: 40px;
+  padding: 0 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+.game
+{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-color: #ffffff;
+  border-radius: 12px;
+  transition: .2s;
+}
+
+.game:hover
+{
+  transform: scale(0.98);
+}
+
+.game:active
+{
+  transform: scale(0.95);
+}
+
 .window {
   position: fixed;
   display: flex;
@@ -66,18 +111,16 @@ body {
   top: 0;
   left: 0;
   height: 39px;
-  width: 500px;
   color: #ffffff;
   font-size: 24px;
   font-family: Comfortaa;
   font-weight: bold;
-  padding: 16px 0 0 0;
+  padding: 16px 0 0 16px;
 }
 
 .profile_friends
 {
-  position: absolute;
-  top: 240px;
+  position: relative;
   width: 100%;
   height: 390px;
   overflow-y: auto;
@@ -150,9 +193,8 @@ body {
 /*  PROFILE WINDOW  */
 
 .profile_pic {
-  position: absolute;
+  position: relative;
   left: 0;
-  top: 55px;
   width: 140px;
   height: 140px;
   background-color: #fff;
@@ -163,7 +205,6 @@ body {
 }
 
 .profile_name {
-  position: absolute;
   color: #fff;
   font-size: 32px;
   font-weight: bold;
@@ -175,7 +216,6 @@ body {
 }
 
 .profile_level {
-  position: absolute;
   height: 40px;
   width: 50px;
   top: 107px;
@@ -188,7 +228,6 @@ body {
 }
 
 .profile_level_bar {
-  position: absolute;
   left: 180px;
   top: 147px;
   width: 300px;
