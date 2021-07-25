@@ -198,20 +198,18 @@ body
   left: 10px;
   right: 10px;
   height: 436px;
-  margin: 0 30px;
-  padding: 10px 0;
+  padding: 10px 60px;
   overflow-x: scroll;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
-  scroll-padding: 6px;
 }
 
 .gameChooseShadow
 {
   position: absolute;
   top: 100px;
-  left: 20px;
-  right: 20px;
+  left: 10px;
+  right: 10px;
   height: 500px;
   box-shadow: 0 -20px 20px 30px #2f3542 inset;
   pointer-events: none;
@@ -228,8 +226,9 @@ body
   border-style: solid;
   border-color: var(--асфальт);
   border-width: 8px;
-  background-color: var(--темно-серый);
+  background-color: var(--темный);
   scroll-snap-align: start;
+  scroll-margin-left: 30px;
   transition: .2s;
   cursor: pointer;
   overflow: hidden;
@@ -251,6 +250,7 @@ body
 
 ::-webkit-scrollbar-track {
   background-color: none;
+  width: 90%;
 }
 
 ::-webkit-scrollbar-thumb {

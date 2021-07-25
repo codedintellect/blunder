@@ -1,0 +1,207 @@
+/* TODO: Correctly align header */
+
+body {
+  background-color: var(--темный);
+  user-select: none;
+}
+
+#header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+}
+
+.logo {
+  position: absolute;
+  height: 60px;
+  line-height: 60px;
+  left: 16px;
+  color: var(--белый);
+  font-size: 40px;
+  font-family: Comfortaa;
+  font-weight: bold;
+}
+
+.topbar_btn {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: var(--синий);
+  padding: 16px 16px 16px 20px;
+  border-radius: 0 0 0 16px;
+  border: 0px;
+  color: var(--белый);
+  font-size: 24px;
+  font-family: Comfortaa;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.topbar_btn:hover { background-color: #0d5aa7; }
+
+.topbar_btn:active { background-color: #0c4d8e; }
+
+.window {
+  position: fixed;
+  background-color: #4a5469;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.window_header {
+  position: absolute;
+  background-color: #404858;
+  top: 0;
+  left: 0;
+  height: 39px;
+  width: 500px;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: Comfortaa;
+  font-weight: bold;
+  padding: 16px 0 0 0;
+}
+
+.window_close {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  height: 21px;
+  width: 21px;
+  border-radius: 11px;
+  background-color: var(--арбузный);
+  cursor: pointer;
+}
+
+.window_close:hover { background-color: var(--алый); }
+
+.window_bg {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: brightness(70%) blur(3px);
+}
+
+
+/*  PROFILE WINDOW  */
+
+.profile_pic {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 140px;
+  height: 140px;
+  background-color: #fff;
+  border-radius: 0 0 30px 0;
+  border-width: 10px;
+  border-color: #404858;
+  border-style: solid;
+}
+
+.profile_name {
+  position: absolute;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: Comfortaa;
+  height: 40px;
+  width: 250px;
+  left: 180px;
+  top: 107px;
+}
+
+.profile_level {
+  position: absolute;
+  height: 40px;
+  width: 50px;
+  top: 107px;
+  left: 430px;
+  font-size: 32px;
+  font-weight: lighter;
+  font-family: Comfortaa;
+  text-align: right;
+  color: var(--светло-серый);
+}
+
+.profile_level_bar {
+  position: absolute;
+  left: 180px;
+  top: 147px;
+  width: 300px;
+  height: 16px;
+  border-radius: 10px;
+  background-color: #404858;
+}
+
+.profile_logout
+{
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+  color: var(--арбузный);
+  font-family: Comfortaa;
+  font-weight: 900;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.profile_logout:hover { color: var(--алый); }
+
+.wbg
+{
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: brightness(70%);
+}
+
+/* REGISTER WINDOW */
+
+input {
+  font-family: Comfortaa;
+  font-size: 24px;
+}
+
+#send_reg {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  top: 355px;
+  left: 150px;
+  background-color: var(--синий);
+  border: 0;
+  border-radius: 16px;
+}
+
+.inputField {
+  position: absolute;
+  left: 20px;
+  width: 440px;
+  height: 50px;
+  padding: 0;
+  border-width: 0;
+  border-radius: 16px;
+  padding-left: 20px;
+}
+
+#reg_username { top: 75px; }
+#reg_email { top: 145px; }
+#reg_pass { top: 215px; }
+#reg_repeat { top: 285px; }
