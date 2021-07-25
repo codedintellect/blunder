@@ -24,6 +24,21 @@
       <div class="window_header">Профиль
         <div class="window_close" onclick='$("#profile").hide();$(".wbg").hide()'></div>
       </div>
+      <div class="profile_friends">
+        <div class="profile_friends_topbar">ДРУЗЬЯ</div>
+          <div>
+            <div class="profile_friend_tile">
+              <img class="profile_friend_icon" width="40px" height="40px"></img>
+              <div style="padding-left: 10px; font-size: 24px; word-break: break-all;">The_Super_Duper_Mega_Longest</div>
+              <button class="profile_del_friend"><img src="close.svg" width="24px" height="24px"></button>
+            </div>
+            <div class="profile_friend_tile">
+              <img class="profile_friend_icon" width="40px" height="40px"></img>
+              <div style="padding-left: 10px; font-size: 24px;">The_Super_Duper_Mega_Longest</div>
+              <button class="profile_del_friend"><img src="close.svg" width="24px" height="24px"></button>
+            </div>
+          </div>
+      </div>
       <div class="profile_pic"></div>
       <div class="profile_name"></div>
       <div class="profile_level"></div>
@@ -31,17 +46,24 @@
       <a class="profile_logout" onclick="">ВЫЙТИ</a>
     </div>
 
-    <div class="window" style="height: 425px;" id="register" >
+    <div class="window" id="register">
       <div class="window_header" style="text-align: center;">Регистрация</div>
-      <input type="text" class="inputField" id="reg_username">
-      <input type="email" class="inputField" id="reg_email">
-      <input type="password" class="inputField" id="reg_pass">
-      <input type="password" class="inputField" id="reg_repeat">
-      <button id="send_reg"></button>
+      <div style="position: relative; top: 16px; display: grid; grid-gap: 18px; justify-content: center;">
+        <input type="text" placeholder="Логин" maxlength="24" class="inputField" id="reg_username">
+        <input type="email" placeholder="Email" class="inputField" id="reg_email">
+        <input type="password" placeholder="Пароль" class="inputField" id="reg_pass">
+        <input type="password" placeholder="Повторите пароль" class="inputField" id="reg_repeat">
+    </div>
+      <button id="send_reg">Зарегистрироваться!</button>
     </div>
 
-    <div class="window" id="login" style="text-align: center; display: none;">
+    <div class="window" style="display: none; text-align: center;" id="login">
       <div class="window_header">Вход</div>
+      <div style="position: relative; top: 16px; display: grid; grid-gap: 18px; justify-content: center;">
+        <input type="text" placeholder="Логин" maxlength="24" class="inputField" id="login_username">
+        <input type="password" placeholder="Пароль" class="inputField" id="login_pass">
+      </div>
+      <button id="send_reg">Войти</button>
     </div>
   </body>
 </html>

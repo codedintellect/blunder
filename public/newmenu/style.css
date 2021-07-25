@@ -47,19 +47,21 @@ body {
 
 .window {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   background-color: #4a5469;
   transform: translate(-50%, -50%);
+  font-family: Comfortaa;
   left: 50%;
   top: 50%;
   width: 500px;
-  height: 600px;
   border-radius: 8px;
   overflow: hidden;
   z-index: 9;
 }
 
 .window_header {
-  position: absolute;
+  position: relative;
   background-color: #404858;
   top: 0;
   left: 0;
@@ -70,6 +72,55 @@ body {
   font-family: Comfortaa;
   font-weight: bold;
   padding: 16px 0 0 0;
+}
+
+.profile_friends
+{
+  position: absolute;
+  top: 240px;
+  width: 100%;
+  height: 390px;
+  overflow-y: auto;
+}
+
+.profile_friends_topbar
+{
+  position: relative;
+  color: #ffffff;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.profile_friend_tile
+{
+  position: relative;
+  display: flex;
+  line-height: 0.83;
+  border-radius: 12px;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.profile_friend_icon
+{
+  position: relative;
+  background-color: #cccccc;
+  border-radius: 8px;
+}
+
+.profile_del_friend
+{
+  position: absolute;
+  right: 0;
+  padding: 16px;
+  height: 100%;
+  border: none;
+  background: crimson;
+  user-drag: none;
 }
 
 .window_close {
@@ -180,28 +231,54 @@ input {
 }
 
 #send_reg {
-  position: absolute;
-  width: 200px;
-  height: 50px;
-  top: 355px;
-  left: 150px;
+  position: relative;
+  padding: 14px;
   background-color: var(--синий);
+  color: var(--белый);
+  font-size: 24px;
+  top: 18px;
+  font-family: Comfortaa;
+  margin: 16px 28px;
+  margin-bottom: 30px;
   border: 0;
   border-radius: 16px;
+  transition: .2s;
+}
+
+#send_reg:hover
+{
+  transform: scale(0.98);
+}
+
+#send_reg:active
+{
+  transform: scale(0.95);
 }
 
 .inputField {
-  position: absolute;
   left: 20px;
   width: 440px;
-  height: 50px;
-  padding: 0;
+  padding: 10px 0;
   border-width: 0;
   border-radius: 16px;
-  padding-left: 20px;
+  outline: none;
+  text-align: center;
+  transition: .4s;
+  background-color: #67738c;
 }
 
+.inputField:focus
+{
+  box-shadow: 0 0 6pt 2pt cornflowerblue;
+}
+
+.inputField::placeholder
+{
+  color: #4a5263;
+}
+
+/*
 #reg_username { top: 75px; }
 #reg_email { top: 145px; }
 #reg_pass { top: 215px; }
-#reg_repeat { top: 285px; }
+#reg_repeat { top: 285px; }*/
