@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<?php include "../borrowed.php"; ?>
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>blunder.tk</title>
+    <?php include "borrowed.php"; ?>
     <meta name="description" content="Игровой веб-сайт.">
-    <link rel="stylesheet" href="../colors.css"/>
+    <link rel="stylesheet" href="colors.css"/>
     <link rel="stylesheet" href="style.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="authHandler.js"></script>
@@ -19,7 +19,7 @@
 
     <!--NOTIFICATIONS-->
 
-    <div id="notif_box">
+    <div id="notif_box" style="display:none;">
       <div class="notif">
         <img class="notif_img"></img>
         <div class="notif_text">Test notification</div>
