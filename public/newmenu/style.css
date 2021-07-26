@@ -4,6 +4,7 @@ body {
   background-color: var(--темный);
   font-family: Comfortaa!important;
   user-select: none;
+  overflow: hidden;
 }
 
 #header {
@@ -13,6 +14,65 @@ body {
   top: 0;
   height: 60px;
 }
+
+/*NOTIFICATIONS*/
+
+#notif_box
+{
+  position: absolute;
+  transform: translateX(0%);
+  top: 60px;
+  bottom: 20px;
+  right: 20px;
+  width: 330px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 4;
+}
+
+.notif {
+  position: relative;
+  background-color: #4a5469;
+  height: 150px;
+  margin: 10px 0;
+  border-radius: 12px;
+}
+
+.notif_img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 64px;
+  height: 64px;
+  background: aliceblue;
+  border-radius: 32px;
+}
+
+.notif_text {
+  position: absolute;
+  margin: 10px;
+  left: 74px;
+  text-align: justify;
+  color: var(--белый);
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    margin: 6px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    margin: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background: aliceblue;
+}
+
 
 .logo {
   position: absolute;

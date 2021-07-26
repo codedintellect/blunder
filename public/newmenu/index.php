@@ -17,6 +17,27 @@
       <button class="topbar_btn" id="user" onclick='$("#profile").show();$(".wbg").show()'>Fronddi</button>
     </header>
 
+    <!--NOTIFICATIONS-->
+
+    <div id="notif_box">
+      <div class="notif">
+        <img class="notif_img"></img>
+        <div class="notif_text">Test notification</div>
+      </div>
+      <div class="notif">
+        <img class="notif_img"></img>
+        <div class="notif_text">Test notification</div>
+      </div>
+      <div class="notif">
+        <img class="notif_img"></img>
+        <div class="notif_text">Test notification</div>
+      </div>
+      <div class="notif">
+        <img class="notif_img"></img>
+        <div class="notif_text">Test notification</div>
+      </div>
+    </div>
+
     <div id="content">
       <div class="games">
         <button class="game"></button>
