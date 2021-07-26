@@ -1,11 +1,13 @@
-body
-{
+/* TODO: Correctly align header */
+
+body {
   background-color: var(--темный);
+  font-family: Comfortaa!important;
   user-select: none;
+  overflow: hidden;
 }
 
-#header
-{
+#header {
   position: fixed;
   left: 0;
   right: 0;
@@ -13,37 +15,85 @@ body
   height: 60px;
 }
 
-.logo
+/*NOTIFICATIONS*/
+
+#notif_box
 {
+  position: absolute;
+  transform: translateX(0%);
+  top: 60px;
+  bottom: 20px;
+  right: 20px;
+  width: 330px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 4;
+}
+
+.notif {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: left;
-  height: 100%;
-  padding: 0 16px;
+  background-color: #4a5469;
+  height: 150px;
+  margin: 10px 0;
+  border-radius: 12px;
+}
+
+.notif_img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 64px;
+  height: 64px;
+  background: aliceblue;
+  border-radius: 32px;
+}
+
+.notif_text {
+  position: absolute;
+  margin: 10px;
+  left: 74px;
+  text-align: justify;
   color: var(--белый);
-  padding-top: 2px;
-  font-size: 32px;
-  font-family: Comfortaa;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    margin: 6px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    margin: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background: aliceblue;
+}
+
+
+.logo {
+  position: absolute;
+  height: 60px;
+  line-height: 60px;
+  left: 16px;
+  color: var(--белый);
+  font-size: 40px;
   font-weight: bold;
 }
 
-.topbar_btn
-{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
+.topbar_btn {
+  position: absolute;
+  right: 0;
   height: 100%;
   background-color: var(--синий);
   padding: 16px 16px 16px 20px;
   border-radius: 0 0 0 16px;
-  border: 2px var(--васильковый) solid;
+  border: 0px;
   color: var(--белый);
   font-size: 24px;
-  font-family: Comfortaa;
   font-weight: bold;
   outline: none;
   cursor: pointer;
@@ -54,105 +104,114 @@ body
 
 .topbar_btn:active { background-color: #0c4d8e; }
 
-#leaderboard_popup
-{
+#content {
   position: absolute;
-  background-color: #384254;
-  top: 70px;
-  bottom: 10px;
-  right: 10px;
-  border: 3px #222222 solid;
-  width: 300px;
-  border-radius: 12px;
-  display: none;
-  box-shadow: 0 0 10px 10px #2f3542;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
+.games {
+  position: absolute;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  bottom: 40px;
+  padding: 0 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+}
 
-/*  PROFILE WINDOW  */
-#profile
-{
+.game {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-color: #ffffff;
+  border-radius: 12px;
+  transition: .2s;
+}
+
+.game:hover {
+  transform: scale(0.98);
+}
+
+.game:active {
+  transform: scale(0.95);
+}
+
+.window {
   position: fixed;
-  display: none;
   background-color: #4a5469;
-  height: 600px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
   width: 500px;
-  left: calc(50% - 250px);
-  top: calc(50% - 300px);
   border-radius: 8px;
   overflow: hidden;
-  z-index: 1;
+  z-index: 9;
 }
 
-.profile_header
-{
-  position: absolute;
+.window_header {
+  position: relative;
   background-color: #404858;
   top: 0;
   left: 0;
   height: 39px;
-  width: 484px;
   color: #ffffff;
   font-size: 24px;
-  font-family: Comfortaa;
   font-weight: bold;
-  padding: 16px 0 0 16px;
+  padding: 16px 0 0 0;
 }
 
-.profile_pic
-{
+.profile_friends {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  overflow-y: auto;
+}
+
+.profile_friends_topbar {
+  position: relative;
+  color: #ffffff;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.profile_friend_tile {
+  position: relative;
+  display: flex;
+  line-height: 0.83;
+  border-radius: 12px;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.profile_friend_icon {
+  position: relative;
+  background-color: #cccccc;
+  border-radius: 8px;
+}
+
+.profile_del_friend {
   position: absolute;
-  left: 0;
-  top: 55px;
-  width: 140px;
-  height: 140px;
-  background-color: #fff;
-  border-radius: 0 0 30px 0;
-  border-width: 10px;
-  border-color: #404858;
-  border-style: solid;
+  right: 0;
+  padding: 16px;
+  height: 100%;
+  border: none;
+  background: crimson;
+  user-drag: none;
 }
 
-.profile_name
-{
-  position: absolute;
-  color: #fff;
-  font-size: 32px;
-  font-weight: bold;
-  font-family: Comfortaa;
-  height: 40px;
-  width: 250px;
-  left: 180px;
-  top: 107px;
-}
-
-.profile_level
-{
-  position: absolute;
-  height: 40px;
-  width: 50px;
-  top: 107px;
-  left: 430px;
-  font-size: 32px;
-  font-weight: lighter;
-  font-family: Comfortaa;
-  text-align: right;
-  color: var(--светло-серый);
-}
-
-.profile_level_bar
-{
-  position: absolute;
-  left: 180px;
-  top: 147px;
-  width: 300px;
-  height: 16px;
-  border-radius: 10px;
-  background-color: #404858;
-}
-
-.profile_close
-{
+.window_close {
   position: absolute;
   right: 17px;
   top: 17px;
@@ -163,16 +222,69 @@ body
   cursor: pointer;
 }
 
-.profile_close:hover { background-color: var(--алый); }
+.window_close:hover { background-color: var(--алый); }
 
-.profile_logout
-{
+.wbg {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: brightness(70%);
+}
+
+
+/*  PROFILE WINDOW  */
+
+.profile_pic {
+  position: relative;
+  left: 0;
+  width: 140px;
+  height: 140px;
+  background-color: #fff;
+  border-radius: 0 0 30px 0;
+  border-width: 10px;
+  border-color: #404858;
+  border-style: solid;
+}
+
+.profile_name {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  height: 40px;
+  width: 250px;
+  left: 180px;
+  top: 107px;
+}
+
+.profile_level {
+  height: 40px;
+  width: 50px;
+  top: 107px;
+  left: 430px;
+  font-size: 32px;
+  font-weight: lighter;
+  text-align: right;
+  color: var(--светло-серый);
+}
+
+.profile_level_bar {
+  left: 180px;
+  top: 147px;
+  width: 300px;
+  height: 16px;
+  border-radius: 10px;
+  background-color: #404858;
+}
+
+.profile_logout {
   position: absolute;
   width: 100%;
   bottom: 20px;
   text-align: center;
   color: var(--арбузный);
-  font-family: Comfortaa;
   font-weight: 900;
   font-size: 24px;
   text-decoration: none;
@@ -180,108 +292,81 @@ body
 
 .profile_logout:hover { color: var(--алый); }
 
-.profile_bg
-{
-  position: fixed;
-  display: none;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backdrop-filter: brightness(70%) blur(3px);
+/* REGISTER WINDOW */
+
+input {
+  font-family: Comfortaa;
+  color: var(--белый);
+  font-size: 24px;
+  margin-bottom: 18px;
 }
 
-#gameChoose
-{
-  position: absolute;
-  top: 100px;
-  left: 10px;
-  right: 10px;
-  height: 436px;
-  padding: 10px 60px;
-  overflow-x: scroll;
-  white-space: nowrap;
-  scroll-snap-type: x mandatory;
-}
-
-.gameChooseShadow
-{
-  position: absolute;
-  top: 100px;
-  left: 10px;
-  right: 10px;
-  height: 500px;
-  box-shadow: 0 -20px 20px 30px #2f3542 inset;
-  pointer-events: none;
-}
-
-.gameCard
-{
+#send_reg {
   position: relative;
-  margin: 0 10px;
-  padding: 0;
-  height: 100%;
-  width: 316px;
-  border-radius: 12px;
-  border-style: solid;
-  border-color: var(--асфальт);
-  border-width: 8px;
-  background-color: var(--темный);
-  scroll-snap-align: start;
-  scroll-margin-left: 30px;
+  transform: translate(-50%, 0);
+  left: 50%;
+  height: 50px;
+  width: 340px;
+  margin: 12px 0;
+  background-color: var(--синий);
+  border: 0;
+  border-radius: 16px;
   transition: .2s;
-  cursor: pointer;
-  overflow: hidden;
 }
 
-.gameCard:hover
-{
-  transform: scale(0.98);
-}
-
-.gameCard:active
-{
-  transform: scale(0.95);
-}
-
-::-webkit-scrollbar {
-  height: 20px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: none;
-  width: 90%;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--темно-серый);
-  border-radius: 12px;
-  background-clip: padding-box;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background-color: var(--асфальт);
-  border-style: solid;
-  border-width: 5px;
-  border-color: var(--темно-серый);
-}
-
-#advert
-{
+.head_title_reg {
   position: absolute;
-  white-space: normal;
-  bottom: 10px;
-  left: calc(50% - 384px);
-  border-radius: 12px;
-  background: #232831;
-  min-width: 728px;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-100%);
+  text-align: right;
+  padding-right: 10px;
+  cursor: pointer;
+  color: var(--светло-серый);
 }
 
-.ad
-{
-  position: relative;
-  height: 90px;
-  width: 728px;
-  margin: 10px;
-  background: #343c4c;
+#auth_head_sep {
+  position: absolute;
+  width: 3px;
+  background: #fff;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 3px;
 }
+
+.head_title_log {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  text-align: left;
+  padding-left: 10px;
+  cursor: pointer;
+  color: var(--светло-серый);
+}
+
+#send_reg:hover { transform: translate(-50%, 0) scale(0.98); }
+
+#send_reg:active { transform: translate(-50%, 0) scale(0.95); }
+
+.inputField {
+  width: 440px;
+  height: 50px;
+  border-width: 0;
+  border-radius: 16px;
+  outline: none;
+  text-align: center;
+  transition: .4s;
+  background-color: #67738c;
+}
+
+.inputField:focus { box-shadow: 0 0 6pt 2pt cornflowerblue; }
+
+.inputField::placeholder { color: #4a5263; }
+
+/*
+#reg_username { top: 75px; }
+#reg_email { top: 145px; }
+#reg_pass { top: 215px; }
+#reg_repeat { top: 285px; }*/
