@@ -69,24 +69,28 @@
       <a class="profile_logout" onclick="">ВЫЙТИ</a>
     </div>
 
-    <div class="window" id="register">
-      <div class="window_header" style="text-align: center;">Регистрация</div>
-      <div style="position: relative; top: 16px; display: grid; grid-gap: 18px; justify-content: center;">
-        <input type="text" placeholder="Логин" maxlength="24" class="inputField" id="reg_username">
-        <input type="email" placeholder="Email" class="inputField" id="reg_email">
-        <input type="password" placeholder="Пароль" class="inputField" id="reg_pass">
-        <input type="password" placeholder="Повторите пароль" class="inputField" id="reg_repeat">
-    </div>
-      <button id="send_reg">Зарегистрироваться!</button>
-    </div>
-
-    <div class="window" style="display: none; text-align: center;" id="login">
-      <div class="window_header">Вход</div>
-      <div style="position: relative; top: 16px; display: grid; grid-gap: 18px; justify-content: center;">
-        <input type="text" placeholder="Логин" maxlength="24" class="inputField" id="login_username">
-        <input type="password" placeholder="Пароль" class="inputField" id="login_pass">
+    <div class="window" style="height:454px;" id="register">
+      <div id="fields" style="position:absolute;height:100%;width:100%;top:0;transition:.3s;left:100%;">
+        <div style="position:absolute;transform:translate(-500px,0);top:90px;margin:0 30px;">
+          <input type="text" placeholder="Логин" maxlength="24" class="inputField" id="reg_username">
+          <input type="email" placeholder="Email" class="inputField" id="reg_email">
+          <input type="password" placeholder="Пароль" class="inputField" id="reg_pass">
+          <input type="password" placeholder="Повторите пароль" class="inputField" id="reg_repeat">
+          <input type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ!" id="send_reg"></input>
+        </div>
+        <div style="position:absolute;top:90px;margin:0 30px;">
+          <input type="email" placeholder="Email" class="inputField" id="log_email">
+          <input type="password" placeholder="Пароль" class="inputField" id="log_pass">
+          <input type="submit" value="Продолжить" id="send_reg"></input>
+        </div>
       </div>
-      <button id="send_reg">Войти</button>
+      <div class="window_header" style="text-align: center;">
+        <div class="head_title_reg" onclick="$('#log_anim').width('0');$('#reg_anim').width('100%');$('#fields').css('left','100%');">РЕГИСТРАЦИЯ</div>
+        <div class="head_title_reg" id="reg_anim" dir="rtl" style="color:#fff;transition:.3s;overflow:hidden;">РЕГИСТРАЦИЯ</div>
+        <div id="auth_head_sep"></div>
+        <div class="head_title_log" onclick="$('#log_anim').width('100%');$('#reg_anim').width('0');$('#fields').css('left',0);">АВТОРИЗАЦИЯ</div>
+        <div class="head_title_log" id="log_anim" style="color:#fff;transition:.3s;overflow:hidden;width:0;">АВТОРИЗАЦИЯ</div>
+      </div>
     </div>
   </body>
 </html>

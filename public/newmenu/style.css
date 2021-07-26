@@ -2,6 +2,7 @@
 
 body {
   background-color: var(--темный);
+  font-family: Comfortaa!important;
   user-select: none;
 }
 
@@ -20,7 +21,6 @@ body {
   left: 16px;
   color: var(--белый);
   font-size: 40px;
-  font-family: Comfortaa;
   font-weight: bold;
 }
 
@@ -34,7 +34,6 @@ body {
   border: 0px;
   color: var(--белый);
   font-size: 24px;
-  font-family: Comfortaa;
   font-weight: bold;
   outline: none;
   cursor: pointer;
@@ -45,8 +44,7 @@ body {
 
 .topbar_btn:active { background-color: #0c4d8e; }
 
-#content
-{
+#content {
   position: absolute;
   top: 60px;
   bottom: 0;
@@ -54,8 +52,7 @@ body {
   right: 0;
 }
 
-.games
-{
+.games {
   position: absolute;
   display: grid;
   grid-gap: 10px;
@@ -70,8 +67,7 @@ body {
   overflow-y: auto;
 }
 
-.game
-{
+.game {
   position: relative;
   width: 100%;
   aspect-ratio: 2/3;
@@ -80,23 +76,18 @@ body {
   transition: .2s;
 }
 
-.game:hover
-{
+.game:hover {
   transform: scale(0.98);
 }
 
-.game:active
-{
+.game:active {
   transform: scale(0.95);
 }
 
 .window {
   position: fixed;
-  display: flex;
-  flex-direction: column;
   background-color: #4a5469;
   transform: translate(-50%, -50%);
-  font-family: Comfortaa;
   left: 50%;
   top: 50%;
   width: 500px;
@@ -113,21 +104,18 @@ body {
   height: 39px;
   color: #ffffff;
   font-size: 24px;
-  font-family: Comfortaa;
   font-weight: bold;
-  padding: 16px 0 0 16px;
+  padding: 16px 0 0 0;
 }
 
-.profile_friends
-{
+.profile_friends {
   position: relative;
   width: 100%;
   height: 390px;
   overflow-y: auto;
 }
 
-.profile_friends_topbar
-{
+.profile_friends_topbar {
   position: relative;
   color: #ffffff;
   font-size: 24px;
@@ -135,8 +123,7 @@ body {
   text-align: center;
 }
 
-.profile_friend_tile
-{
+.profile_friend_tile {
   position: relative;
   display: flex;
   line-height: 0.83;
@@ -148,15 +135,13 @@ body {
   overflow: hidden;
 }
 
-.profile_friend_icon
-{
+.profile_friend_icon {
   position: relative;
   background-color: #cccccc;
   border-radius: 8px;
 }
 
-.profile_del_friend
-{
+.profile_del_friend {
   position: absolute;
   right: 0;
   padding: 16px;
@@ -179,14 +164,14 @@ body {
 
 .window_close:hover { background-color: var(--алый); }
 
-.window_bg {
+.wbg {
   position: fixed;
   display: none;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  backdrop-filter: brightness(70%) blur(3px);
+  backdrop-filter: brightness(70%);
 }
 
 
@@ -208,7 +193,6 @@ body {
   color: #fff;
   font-size: 32px;
   font-weight: bold;
-  font-family: Comfortaa;
   height: 40px;
   width: 250px;
   left: 180px;
@@ -222,7 +206,6 @@ body {
   left: 430px;
   font-size: 32px;
   font-weight: lighter;
-  font-family: Comfortaa;
   text-align: right;
   color: var(--светло-серый);
 }
@@ -236,14 +219,12 @@ body {
   background-color: #404858;
 }
 
-.profile_logout
-{
+.profile_logout {
   position: absolute;
   width: 100%;
   bottom: 20px;
   text-align: center;
   color: var(--арбузный);
-  font-family: Comfortaa;
   font-weight: 900;
   font-size: 24px;
   text-decoration: none;
@@ -251,53 +232,67 @@ body {
 
 .profile_logout:hover { color: var(--алый); }
 
-.wbg
-{
-  position: fixed;
-  display: none;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backdrop-filter: brightness(70%);
-}
-
 /* REGISTER WINDOW */
 
 input {
   font-family: Comfortaa;
+  color: var(--белый);
   font-size: 24px;
+  margin-bottom: 18px;
 }
 
 #send_reg {
   position: relative;
-  padding: 14px;
+  transform: translate(-50%, 0);
+  left: 50%;
+  height: 50px;
+  width: 340px;
+  margin: 12px 0;
   background-color: var(--синий);
-  color: var(--белый);
-  font-size: 24px;
-  top: 18px;
-  font-family: Comfortaa;
-  margin: 16px 28px;
-  margin-bottom: 30px;
   border: 0;
   border-radius: 16px;
   transition: .2s;
 }
 
-#send_reg:hover
-{
-  transform: scale(0.98);
+.head_title_reg {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-100%);
+  text-align: right;
+  padding-right: 10px;
+  cursor: pointer;
+  color: var(--светло-серый);
 }
 
-#send_reg:active
-{
-  transform: scale(0.95);
+#auth_head_sep {
+  position: absolute;
+  width: 3px;
+  background: #fff;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 3px;
 }
+
+.head_title_log {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  text-align: left;
+  padding-left: 10px;
+  cursor: pointer;
+  color: var(--светло-серый);
+}
+
+#send_reg:hover { transform: translate(-50%, 0) scale(0.98); }
+
+#send_reg:active { transform: translate(-50%, 0) scale(0.95); }
 
 .inputField {
-  left: 20px;
   width: 440px;
-  padding: 10px 0;
+  height: 50px;
   border-width: 0;
   border-radius: 16px;
   outline: none;
@@ -306,15 +301,9 @@ input {
   background-color: #67738c;
 }
 
-.inputField:focus
-{
-  box-shadow: 0 0 6pt 2pt cornflowerblue;
-}
+.inputField:focus { box-shadow: 0 0 6pt 2pt cornflowerblue; }
 
-.inputField::placeholder
-{
-  color: #4a5263;
-}
+.inputField::placeholder { color: #4a5263; }
 
 /*
 #reg_username { top: 75px; }
