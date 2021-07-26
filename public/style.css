@@ -84,8 +84,9 @@ body {
   font-weight: bold;
 }
 
-.topbar_btn {
+#user {
   position: absolute;
+  display: none;
   right: 0;
   height: 100%;
   background-color: var(--синий);
@@ -98,11 +99,12 @@ body {
   outline: none;
   cursor: pointer;
   transition: .2s;
+  font-family: Comfortaa;
 }
 
-.topbar_btn:hover { background-color: #0d5aa7; }
+#user:hover { background-color: #0d5aa7; }
 
-.topbar_btn:active { background-color: #0c4d8e; }
+#user:active { background-color: #0c4d8e; }
 
 #content {
   position: absolute;
@@ -365,9 +367,3 @@ input {
 .inputField:focus { box-shadow: 0 0 6pt 2pt cornflowerblue; }
 
 .inputField::placeholder { color: #4a5263; }
-
-/*
-#reg_username { top: 75px; }
-#reg_email { top: 145px; }
-#reg_pass { top: 215px; }
-#reg_repeat { top: 285px; }*/

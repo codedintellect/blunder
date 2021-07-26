@@ -14,7 +14,7 @@
   <body>
     <header id="header">
       <div class="logo" title="Какие же мучения...">blunder.tk</div>
-      <button class="topbar_btn" id="user" style="display:none;" onclick='$("#profile").show();$(".wbg").show()'></button>
+      <button id="user" onclick='$("#profile").show();$(".wbg").show()'></button>
     </header>
 
     <!--NOTIFICATIONS-->
@@ -132,7 +132,9 @@
           var user = userCredential.user;
           user.updateProfile({
             displayName: display_name
-          }).then(() => {}).catch((error) => {
+          }).then(() => {
+            $('#user').html(display_name);
+          }).catch((error) => {
             console.error(error);
           });
         })
