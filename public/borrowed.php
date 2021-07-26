@@ -16,10 +16,3 @@
   firebase.initializeApp(firebaseConfig);
 </script>
 <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
-
-<script>
-var snd = new Audio("/public/click.wav");
-$(document).click(function() {
-  snd.play()
-})
-</script>

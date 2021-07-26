@@ -299,6 +299,7 @@ input {
   color: var(--белый);
   font-size: 24px;
   margin-bottom: 18px;
+  padding: 0;
 }
 
 #send_reg {
