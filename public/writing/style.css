@@ -1,0 +1,56 @@
+body
+{
+  background-color: #2f3542;
+  user-select: none;
+  overflow: hidden;
+  font-family: Comfortaa;
+}
+
+#list
+{
+  position: absolute;
+  width: 500px;
+  left: 10%;
+  top: 50%;
+  height: 700px;
+  transform: translate(0%, -50%);
+  border-radius: 12px;
+  background-color: #95988d;
+  padding: 24px;
+  overflow-y: auto;
+  font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 0 10px 10px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    margin: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background: #555653;
+}
+
+input
+{
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 20px;
+  min-width: 20px;
+  max-width: 420px;
+  width: 60px;
+  font-family: Comfortaa;
+}
+
+input:focus
+{
+  background: #00000033;
+}
