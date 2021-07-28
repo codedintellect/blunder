@@ -26,6 +26,7 @@ body {
   color: #ffffff;
   font-size: 16px;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 #list {
@@ -39,10 +40,10 @@ body {
 }
 
 .textInput {
-  min-width: 450px;
+  min-width: 470px;
   min-height: 100px;
-  max-width: 450px;
-  max-height: 550px;
+  max-width: 470px;
+  max-height: 500px;
   font-family: Comfortaa;
   font-size: 20px;
   background: none;
@@ -51,16 +52,18 @@ body {
   border-radius: 12px;
 }
 
+::-moz-selection { background: #6c7892; }
+::selection { background: #6c7892; }
+
 #message {
   position: absolute;
   visibility: hidden;
-  background-color: #00000055;
+  background-color: #000000cc;
   border-radius: 12px;
   padding: 16px;
-  transform: translateY(-100%);
+  transform: translate(-50%, -100%);
   top: 0;
-  left: 20%;
-  right: 20%;
+  left: 50%;
   font-size: 20px;
   color: #ffffff;
   z-index: 4;
@@ -70,22 +73,20 @@ body {
 
 button {
   position: relative;
-  background-color: #ff7675;
+  background-color: #445a8a;
   border-radius: 14px;
-  transform: translateX(-50%);
-  left: 50%;
   border: none;
   padding: 16px;
-  font-size: 24px;
+  font-size: 22px;
   font-family: Comfortaa;
   font-weight: bold;
   color: #ffffff;
   transition: .2s;
 }
 
-button:hover { transform: scale(0.98) translateX(-50%);}
+button:hover { transform: scale(0.98);}
 
-button:active { transform: scale(0.95) translateX(-50%);}
+button:active { transform: scale(0.95);}
 
 
 
@@ -106,15 +107,20 @@ button:active { transform: scale(0.95) translateX(-50%);}
 }
 
 input {
-  background: none;
+  background: #81847b;
   border: none;
   outline: none;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 24px;
   min-width: 20px;
   max-width: 420px;
-  width: 60px;
+  margin: 6px 0;
+  width: 420px;
   font-family: Comfortaa;
 }
 
 input:focus { background: #00000033;}
+
+p {
+  margin-bottom: 0;
+}
