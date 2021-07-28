@@ -8,10 +8,25 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <div id="list">
-      <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
-      <p>Это был прекрасный <input id="1" maxlength="25"></input>! Ничто не могло его испортить. Разве что <input id="2"></input> и <input id="3"></input></div>
-      <div style="display: grid; grid-template-columns: repeat(2, 100px);"></div>
+    <div id="message">Теперь Ваш друг %DISPLAY_NAME% придумывает слова к Вашим предложениям! Подождите немного...</div>
+    <div id="game">
+      <div style="width: 50%; margin: 0 10px; position: relative; float: left;">
+        <div class="task">Напишите несколько предложений с пропусками некоторых слов (на месте пропущенных слов пишите "...") и нажмите "Продолжить", когда будете готовы.</div>
+        <div id="list">
+          <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
+          <textarea class="textInput">Это был прекрасный ...! Ничто не могло его испортить. Разве что ... и ...</textarea>
+        </div>
+        <button onclick="messageOut()">ПРОДОЛЖИТЬ</button>
+      </div>
+
+      <div style="width: 50%; margin: 0 10px; position: relative; float: right;">
+        <div class="task">И вот что у вас получилось:</div>
+        <div id="list">
+          <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
+          <p class="test">UwU</p>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="logic.js"></script>
 </html>
