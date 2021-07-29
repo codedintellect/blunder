@@ -7,7 +7,10 @@ var c, adj, v, adv = 0;
 
 $(document).ready(function a() {
    wordsInput();
-}
+
+   if (Notification.permission !== 'granted')
+   Notification.requestPermission();
+});
   /*function generate() {
     var $input = $("input"),
     $buffer = $(".input-buffer");
@@ -20,7 +23,6 @@ $(document).ready(function a() {
   })
 }*/
 
-)
 
 function messageOut() {
   $("#message").css({"transform":"translate(-50%, 0%)", "top": "10px", "visibility": "visible"});

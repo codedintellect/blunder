@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="authHandler.js"></script>
+
   </head>
   <body>
     <header id="header">
@@ -19,24 +20,12 @@
 
     <!--NOTIFICATIONS-->
 
-    <!--div id="notif_box">
+    <div id="notif_box">
       <div class="notif">
         <img class="notif_img"></img>
-        <div class="notif_text">Test notification</div>
+        <div class="notif_text">Test notification #-1</div>
       </div>
-      <div class="notif">
-        <img class="notif_img"></img>
-        <div class="notif_text">Test notification</div>
-      </div>
-      <div class="notif">
-        <img class="notif_img"></img>
-        <div class="notif_text">Test notification</div>
-      </div>
-      <div class="notif">
-        <img class="notif_img"></img>
-        <div class="notif_text">Test notification</div>
-      </div>
-    </div-->
+    </div>
 
     <!--div id="content">
       <div class="games">
@@ -159,4 +148,5 @@
         });
     }
   </script>
+  <script src="notificationHandler.js"></script>
 </html>

@@ -32,28 +32,42 @@ body {
 
 .notif {
   position: relative;
+  display: inline-block;
   background-color: #4a5469;
-  height: 150px;
+  width: 330px;
   margin: 10px 0;
   border-radius: 12px;
 }
 
 .notif_img {
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  position: relative;
+  margin: 10px;
+  float: left;
   width: 64px;
   height: 64px;
   background: aliceblue;
-  border-radius: 32px;
+  border-radius: 12px;
 }
 
 .notif_text {
-  position: absolute;
+  position: relative;
+  width: 225px;
   margin: 10px;
-  left: 74px;
+  float: right;
+  font-size: 14px;
   text-align: justify;
   color: var(--белый);
+}
+
+.notif_btn
+{
+  position: relative;
+  padding: 10px;
+  color: var(--белый);
+  border-radius: 12px;
+  border: none;
+  background-color: #4b6584;
+  width: 50%;
 }
 
 ::-webkit-scrollbar {
