@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="colors.css"/>
     <link rel="stylesheet" href="style.css"/>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="invites.js"></script>
     <script src="authHandler.js"></script>
-
   </head>
   <body>
     <header id="header">

@@ -5,6 +5,11 @@ firebase.auth().onAuthStateChanged((user) => {
     $('.wbg').hide();
     $('#user').show();
     $('#user').html(user.displayName);
+    //try {
+      subToInvites();
+    //} catch (e) {
+    //  console.warn("No 'invites' script!");
+    //}
   } else {
     console.log('OH NO! LOGIN, PLEASE');
     $('#auth').show();
