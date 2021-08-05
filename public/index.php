@@ -27,32 +27,33 @@
       </div>
     </div>
 
-    <!--div id="content">
+    <div id="content">
       <div class="games">
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
-        <button class="game"></button>
+        <button class="game" id="chess" value="Шахматы"></button>
+        <button class="game" id="connect4" value="Connect4"></button>
+        <button class="game" id="dominoes" value="Домино"></button>
+        <button class="game" id="hangman" value="Виселица"></button>
+        <button class="game" id="painter" value="Рисовальный поединок"></button>
+        <button class="game" id="sticks" value="Палочки"></button>
+        <button class="game" id="tic_tac_toe" value="Крестики-Нолики"></button>
+        <button class="game" id="writing" value="Сочинение"></button>
       </div>
-    </div-->
+    </div>
 
     <div class="wbg"></div>
 
-    <div class="window" id="profile" style="display:none;">
+    <div class="window" id="game_settings" style="display: none;">
+      <div class="window_header">Настройки игры</div>
+      <div style="display: inline-block; color: #fff; padding: 10px;"><a class="profile_logout" onclick='$("#game_settings").hide();$(".wbg").hide()' style="position: relative; bottom: 0;">ОТМЕНА</a></div>
+    </div>
+
+    <div class="window" id="profile" style="display: none;">
       <div class="window_header">Профиль
         <div class="window_close" onclick='$("#profile").hide();$(".wbg").hide()'></div>
       </div>
-      <div style="display: flex; flex-direction: row;">
+      <div style="display: inline-block;">
         <div class="profile_pic"></div>
-        <div style="display: flex; flex-direction: column; padding: 16px;">
+        <div style="float: right; padding: 16px;">
           <div style="position: relative; width: 100%; display: flex;">
             <div class="profile_name">Fronddi</div>
             <div class="profile_level">1</div>
@@ -65,13 +66,13 @@
           <div>
             <div class="profile_friend_tile">
               <img class="profile_friend_icon" width="40px" height="40px"></img>
-              <div style="padding-left: 10px; font-size: 24px; word-break: break-all;">The_Super_Duper_Mega_Longest</div>
-              <button class="profile_del_friend"><img src="close.svg" width="24px" height="24px"></button>
+              <div style="padding-left: 10px; font-size: 22px; word-break: break-all;">The_Super_Duper_Mega_Longest</div>
+              <button class="profile_del_friend"><img src="delete.svg" width="24px" height="24px"></button>
             </div>
             <div class="profile_friend_tile">
               <img class="profile_friend_icon" width="40px" height="40px"></img>
-              <div style="padding-left: 10px; font-size: 24px;">The_Super_Duper_Mega_Longest</div>
-              <button class="profile_del_friend"><img src="close.svg" width="24px" height="24px"></button>
+              <div style="padding-left: 10px; font-size: 22px;">The_Super_Duper_Mega_Longest</div>
+              <button class="profile_del_friend"><img src="delete.svg" width="24px" height="24px"></button>
             </div>
           </div>
       </div>
@@ -79,7 +80,7 @@
       <a class="profile_logout" onclick="">ВЫЙТИ</a>
     </div>
 
-    <div class="window" style="display:none;height:449px;" id="auth">
+    <div class="window" id="auth" style="display: none; height: 449px;">
       <div id="fields" style="position:absolute;height:100%;width:100%;top:0;transition:.4s;left:100%;">
         <div style="position:absolute;transform:translate(-500px,0);top:85px;margin:0 30px;">
           <input type="text" placeholder="Логин" maxlength="24" class="inputField" id="reg_username">
@@ -149,4 +150,16 @@
     }
   </script>
   <script src="notificationHandler.js"></script>
+
+  <script>
+    var gameChoosen = "";
+    var game = $(".game");
+    var gameSettingsWin = $("#game_settings");
+
+    game.click(function (e) {
+      gameChoosen = e.target.value;
+      gameSettingsWin.find(".window_header").html("Настройки игры " + `"` + gameChoosen + `"`);
+      gameSettingsWin.show();
+    });
+  </script>
 </html>
