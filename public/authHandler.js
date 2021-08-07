@@ -5,6 +5,7 @@ firebase.auth().onAuthStateChanged((user) => {
     $('.wbg').hide();
     $('#user').show();
     $('#user').html(user.displayName);
+    $('.profile_name').html(user.displayName);
     //try {
       subToInvites();
     //} catch (e) {

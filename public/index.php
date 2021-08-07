@@ -44,7 +44,7 @@
 
     <div class="window" id="game_settings" style="display: none;">
       <div class="window_header">Настройки игры</div>
-      <div style="display: inline-block; color: #fff; padding: 10px;"><a class="profile_logout" onclick='$("#game_settings").hide();$(".wbg").hide()' style="position: relative; bottom: 0;">ОТМЕНА</a></div>
+      <div style="display: inline-block; color: #fff; padding: 10px;"><a class="profile_logout" onclick='$("#game_settings").hide();$(".wbg").hide()' style="bottom: 0;">ОТМЕНА</a></div>
     </div>
 
     <div class="window" id="profile" style="display: none;">
@@ -55,7 +55,7 @@
         <div class="profile_pic"></div>
         <div style="float: right; padding: 16px;">
           <div style="position: relative; width: 100%; display: flex;">
-            <div class="profile_name">Fronddi</div>
+            <div class="profile_name"></div>
             <div class="profile_level">1</div>
           </div>
           <div class="profile_level_bar"></div>
