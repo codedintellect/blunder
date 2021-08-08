@@ -28,6 +28,7 @@
     </div>
 
     <div id="content">
+      <div style="height: 40px; color: #fff; text-align: center; font-weight: bold; font-size: 36px;">ИГРЫ</div>
       <div class="games">
         <button class="game" id="chess" value="Шахматы"></button>
         <button class="game" id="connect4" value="Connect4"></button>

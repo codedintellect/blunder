@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 - Страница не существует</title>
+    <title>404 - Страница не найдена</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
   </head>
   <body>
     <div id="errorNum">404</div>
-    <div id="errorText">Страница не существует</div>
+    <div id="errorText">Страница не найдена</div>
     <div style="position: absolute; bottom: 40px; width: 100%;">
       <div id="speakers"> - Дружище, куда мы попали? <br> - Сам не понимаю. Давай просто вернёмся назад...</div>
       <a id="back" href="/public/">НАЗАД</a>
@@ -20,6 +20,9 @@
     margin: 0;
     padding: 0;
     font-family: Comfortaa;
+    background-color: #2f3542;
+    color: #fff;
+    user-select: none;
   }
 
   #errorNum {

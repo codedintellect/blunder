@@ -7,14 +7,13 @@ body {
 
 #game {
   position: absolute;
-  display: flex;
-  width: 1100px;
   left: 50%;
   top: 50%;
+  width: 560px;
   height: 700px;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-  background-color: #444444;
+  background-color: #445271;
   padding: 24px;
   overflow-y: auto;
   font-size: 20px;
@@ -24,22 +23,23 @@ body {
   position: relative;
   width: 100%;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
   margin-bottom: 20px;
 }
 
 #list {
   position: relative;
-  max-height: 700px;
+  max-height: 530px;
   border-radius: 12px;
-  background-color: #95988d;
+  background-color: #6277a7;
   padding: 24px;
   overflow-y: auto;
   font-size: 20px;
 }
 
 .textInput {
+  background-color: #b5c6ec!important;
   min-width: 470px;
   min-height: 100px;
   max-width: 470px;
@@ -107,7 +107,7 @@ button:active { transform: scale(0.95);}
 }
 
 input {
-  background: #81847b;
+  background: #b5c6ec;
   border: none;
   outline: none;
   border-radius: 6px;
@@ -119,8 +119,9 @@ input {
   font-family: Comfortaa;
 }
 
-input:focus { background: #00000033;}
+input:focus { background: #9cabce;}
 
 p {
   margin-bottom: 0;
+  color: #fff;
 }

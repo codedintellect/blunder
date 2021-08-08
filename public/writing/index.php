@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
+    <div id="game" class="awaiting" style="display: flex; align-items: center; justify-content: center; z-index: 1; display: none; color: #fff; font-size: 32px;">Ждём ответа друга...</div>
     <div id="message">Ваш ответ принят. Теперь ждём ответ Вашего друга - %DISPLAY_NAME%</div>
     <div id="game" class="start" style="width: 400px; height: auto; display: block; background-color: #292e3a;">
       <div style="position: relative; padding: 0 0 10px 0; text-align: center; font-size: 36px; font-weight: bold; color: #ffffff;">Режим игры</div>
@@ -18,7 +19,7 @@
     </div>
 
     <div id="game" class="sentences" style="display: none;">
-      <div style="width: 50%; margin: 0 10px; position: relative; float: left;">
+      <div style="margin: 0 10px;">
         <div class="task">Напишите несколько предложений с пропусками некоторых слов (на месте пропущенных слов пишите "---") и нажмите "Продолжить", когда будете готовы.</div>
         <div id="list" class="sentencesList">
           <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
@@ -26,32 +27,16 @@
         </div>
         <button onclick="messageOut()" style="width: 100%; top: 10px;">ПРОДОЛЖИТЬ</button>
       </div>
-
-      <div style="width: 50%; margin: 0 10px; position: relative; float: right;">
-        <div class="task">И вот что у вас получилось:</div>
-        <div id="list">
-          <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
-          <p class="test">UwU</p>
-        </div>
-      </div>
     </div>
 
     <div id="game" class="words" style="display: none;">
-      <div style="width: 50%; margin: 0 10px; position: relative; float: left;">
-        <div class="task">Напишите несколько слов и нажмите "Продолжить", когда будете готовы.</div>
+      <div style="margin: 0 10px;">
+        <div class="task">Напишите слова и нажмите "Продолжить", когда будете готовы.</div>
         <div id="list" class="wordsList">
           <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
           <!--input class="d"style="background-color: #73756d; font-size: 28px; width: 500px;"></input-->
         </div>
         <button onclick="messageOut()" style="width: 100%; top: 10px;">ПРОДОЛЖИТЬ</button>
-      </div>
-
-      <div style="width: 50%; margin: 0 10px; position: relative; float: right;">
-        <div class="task">И вот что у вас получилось:</div>
-        <div id="list">
-          <div class="input-buffer" style="position: absolute; visibility: hidden; white-space: nowrap;"></div>
-          <p class="test">UwU</p>
-        </div>
       </div>
     </div>
   </body>

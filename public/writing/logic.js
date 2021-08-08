@@ -26,6 +26,7 @@ $(document).ready(function a() {
 
 function messageOut() {
   $("#message").css({"transform":"translate(-50%, 0%)", "top": "10px", "visibility": "visible"});
+  $(".awaiting").css("display", "flex");
   textConvert();
   saveInputs();
 
@@ -65,7 +66,7 @@ function saveInputs() {
   $("input").each(function(index) {
       noun.push($(this).val());   // DOESN'T WORK NORMALLY!
     })
-  alert(noun);
+  //alert(noun);
 }
 
 function textConvert() {
@@ -79,6 +80,6 @@ function sentencesClick() {
 }
 
 function wordsClick() {
-  $(".words").css("display", "flex");
+  $(".words").css("display", "block");
   $(".start").css("display", "none");
 }

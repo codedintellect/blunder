@@ -3,10 +3,8 @@ function draw() {
     var ctx = canvas.getContext("2d");
     var x, y;
 
-for (x = 0; x <= 8; x++)
-{
-  for (y = 0; y <= 8; y++)
-  {
+for (x = 0; x <= 8; x++) {
+  for (y = 0; y <= 8; y++) {
     ctx.beginPath();
     ctx.rect(100*x, 100*y, 100 + 100*x, 100 + 100*y);
     if((x+y)%2 == 0)
@@ -28,12 +26,10 @@ function setup() {
   for (var i = 0; i < 8; i++) {
     var x = 0;
     for (var j = 0; j < fen[i].length; j++) {
-      if(isNaN(fen[i][j])) {
+      if(isNaN(fen[i][j]))
         $("#pieces").append("<div class='piece' style='top: " + i*12.5 + "%; left: "+ (x + j)*12.5+"%' id=" + fen[i][j] + ">" + fen[i][j] + "</div>");
-      }
-      else {
+      else
         x+= parseInt(fen[i][j]);
-      }
     }
   }
 }
